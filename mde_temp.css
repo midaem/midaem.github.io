@@ -1,0 +1,122 @@
+@import 'https://fonts.googleapis.com/css?family=Exo+2';
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(#300919, #070f1f);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #ff1d88aa;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1em;
+}
+
+main {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+p {
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.4em;
+}
+
+.support {
+    text-align: center;
+    margin-top: 70px;
+}
+
+a {
+    font-family: 'Exo 2', sans-serif;
+
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    padding: 10px;
+    text-decoration: none;
+    color: #ff1d88aa;
+    border-left: 1px solid #ff1d88aa;
+    border-right: 1px solid #ff1d88aa;
+    box-shadow: 20px 0 30px -15px #ff1d88ff, -20px 0 30px -15px #ff1d88ff;
+}
+
+.logo {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 100px;
+    height: 100px; 
+
+    margin-bottom: 50px;
+}
+
+.logo:after {
+    position: absolute;
+    top: 52%;
+    left: 52%;
+    height: 90%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+
+    content: '';
+    background-image: url("LogoRed512px.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: hue-rotate(-30deg);
+}
+
+.logo::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+
+    content: '';
+    background: #300919;
+    border-radius: 50%;
+    border: 2px solid #ff1d88cc;
+    box-shadow: 0 0 8px #ff1d88cc, 0 0 25px #ff1d88ff, inset 0 0 8px #ff1d8866, inset 0 0 25px #ff1d88cc;
+}
+
+.title-r-intro, .title-l-intro {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 2.6em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 28px;
+
+    color: #ff1d88cc;
+    text-shadow: 0 0 10px #ff1d88cc;
+    pointer-events: none;
+}
+
+.title-l-intro {
+    left: 50%;
+    transform: translate(-100%, 0);
+    padding-right: 70px;
+}
+
+.title-r-intro {
+    right: 50%;
+    transform: translate(100%, 0);
+    padding-left: 72px;
+    letter-spacing: 0.015em;
+}
