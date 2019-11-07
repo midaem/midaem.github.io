@@ -44,6 +44,77 @@ var intro_animation = new Array(
     [["show_assets"]]
     );
 
+var intro_animation_contact = new Array(
+    [["add_class","h-on-off-logo","turn-on-button-animation"]],
+    [["wait", 100]],
+    [["add_class","header-bg","fade-in-blink"], ["add_class","main-screen-bg","fade-in-blink"], ["add_class","footer-bg","fade-in-blink"]],
+    [["wait",1500]],
+    [["clear_output", 1]],
+    [["wait",1000]],
+    [["add_text", "MiDaEm Os [v2.018a] <br />"]],
+    [["wait", 200]],
+    [["add_text", "Loading Core System"]],
+    [["wait", 500]],
+    [["change_type_speed", 500]],
+    "...",
+    [["display_none", "bg-h-on-off-logo"]],
+    [["wait", 200]],
+    [["clear_output", 1]],
+    [["wait", 200]],
+    [["add_text", "Welcome to MiDaEm OS. <br />"]],
+    [["wait", 50]],
+    [["add_text", "> "]],
+    [["wait", 1250]],
+    [["change_type_speed", 100]],
+    "run ./midaem.com",
+    [["wait", 1000]],
+    [["add_text", "Loading midaem.com"]],
+    [["change_type_speed", 400]],
+    "...",
+    [["change_type_speed", 50]],
+    [["add_text", "Loading complete!"]],
+    [["add_class","h-img-logo","fade-in-1"]],
+    [["add_class","h-button-store","fade-in-h-button-top-left"]],
+    [["wait", 100]],
+    [["add_class","h-button-mizugames","fade-in-h-button-top-right"]],
+    [["wait", 100]],
+    [["add_class","h-button-market","fade-in-h-button-bottom-left"]],
+    [["wait", 100]],
+    [["add_class","h-button-support","fade-in-h-button-bottom-right"]],
+    [["wait", 100]],
+    [["wait", 500]],
+    [["clear_output", 1]],
+    [["add_text", "> "]],
+    [["wait", 1250]],
+    [["change_type_speed", 100]],
+    "support",
+    [["wait", 1000]],
+    [["delete_cursor"]],
+    [["show_contact"]]
+    );
+
+var restart_animation = new Array(
+    [["clear_output", 1]],
+    [["add_text", "The system is about to restart.<br />"]],
+    [["add_text", "In"]],
+    [["wait", 1000]],
+    [["clear_chars", 2]],
+    [["add_text", "In 3"]],
+    [["wait", 1000]],
+    [["clear_chars", 4]],
+    [["add_text", "In 2"]],
+    [["wait", 1000]],
+    [["clear_chars", 4]],
+    [["add_text", "In 1"]],
+    [["wait", 1000]],
+    [["clear_chars", 4]],
+    [["add_text", "Restarting...<br />"]],
+    [["wait", 500]],
+    [["add_class","screen-container","fade-out-2s"],["add_class","top-button-container","fade-out-2s"]],
+    [["wait", 2000]],
+    [["reload"]]
+    );
+
 var exit_animation = new Array(
     [["clear_output", 1]],
     [["add_text", "The system is shutting down.<br />"]],
@@ -92,7 +163,7 @@ var exit_animation = new Array(
     "Shutdown completed.",
     [["add_text", "<br />"]],
     [["change_type_speed", 120]],
-    '"Hasta la vista, baby."',
+    '"See you soon."',
     [["wait", 1000]],
     [["add_class","screen-container","fade-out-2s"],["add_class","top-button-container","fade-out-2s"]],
     [["wait", 2000]],
@@ -214,6 +285,10 @@ async function PlayCurrentFrame ()
                     ShowAssets();
                     break;
 
+                case "show_contact":
+                    ShowContact();
+                    break;
+
                 case "reload":
                     location.reload();
                     break;
@@ -266,6 +341,13 @@ function sleep(_ms)
 
 async function ShowAssets()
 {
+    window.scrollTo(0,0);
+    await sleep(500);
+    var targetElements = document.getElementsByClassName("console-permanent");
+    for(var i = 0; i < targetElements.length; i++)
+    {
+        targetElements.item(i).style.display = 'block';
+    }
     var maxElementsFadeIn = 16;
     var targetElements = document.getElementsByClassName('asset');
 
@@ -284,6 +366,13 @@ async function ShowAssets()
             targetElements.item(i).style.opacity = "1.0";
         }
     }
-    StartInteractiveConsole();
+    StartInteractiveConsole('home');
+}
+
+async function ShowContact()
+{
+    //document.querySelectorAll('.asset').forEach(function(asset){asset.remove()})
+    //document.querySelectorAll('.console-permanent').forEach(function(asset){asset.remove()})
+    StartInteractiveConsole('contact');
 }
 
