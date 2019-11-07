@@ -5,7 +5,7 @@ var intro_animation = new Array(
     [["wait",1500]],
     [["clear_output", 1]],
     [["wait",1000]],
-    [["add_text", "MiDaEm Os [v2.018a] <br />"]],
+    [["add_text", "MiDaEm Os [v2.019a] <br />"]],
     [["wait", 200]],
     [["add_text", "Loading Core System"]],
     [["wait", 500]],
