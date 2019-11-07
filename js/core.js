@@ -3,7 +3,7 @@ var footerConsole = null;
 var footerOutputText = '';
 var nextCommand = '';
 
-var inContact = false;
+var inSupport = false;
 
 var confirmPlay = false;
 var confirmExit = false;
@@ -36,7 +36,7 @@ async function InteractiveConsole (_keycode)
                break;
 
             case 'help':
-                if (inContact)
+                if (inSupport)
                 {
                     newChar = '<br /><br />The following commands are available:<br /><br />"assets"<br />&emsp;Show all the assets.<br />"support"<br />&emsp;Show support info.<br />"play"<br />&emsp;Play a game.<br />"restart"<br />&emsp;Restart system.<br />"exit"<br />&emsp;Shut down system.<br />';
                 }
@@ -54,12 +54,12 @@ async function InteractiveConsole (_keycode)
                 newChar = '<br /><br />For support please email us at <a href="mailto:support@midaem.com" style="text-decoration: underline;">support@midaem.com</a><br />We are happy to help!<br/>';
             break;
             case 'assets':
-                if (inContact)
+                if (inSupport)
                 {
                     footerOutputText = '';
                     currentOutputElement.innerHTML = '';
                     ShowAssets();
-                    inContact = false;
+                    inSupport = false;
                 }
                 else
                 {
@@ -180,10 +180,10 @@ function StartInteractiveConsole (section)
             var assetsCount = targetElements.length;
             footerOutputText = 'The command completed successfully.<br />Total: '+ assetsCount + ' Asset(s)<br /><br />Please insert a new command<br />Type "help" for a list of commands.<br />> ';
            break;
-        case 'contact':
+        case 'support':
             footerOutputText = '<br />For support please email us at <a href="mailto:support@midaem.com" style="text-decoration: underline;">support@midaem.com</a><br />We are happy to help!<br/><br /><br />Please insert a new command<br />Type "help" for a list of commands.<br />> ';
             footerConsole.style.alignSelf = "flex-start";
-            inContact = true;
+            inSupport = true;
             break;
         default:
             footerOutputText = 'Please insert a new command<br /><br/>Type "help" for a list of commands.<br />> ';
@@ -233,8 +233,8 @@ function InitCore ()
     {
         switch (subpage)
         {
-            case 'contact':
-                setTimeout(() => { AnimationEngine(intro_animation_contact, "main-console"); }, 1000);
+            case 'support':
+                setTimeout(() => { AnimationEngine(intro_animation_support, "main-console"); }, 1000);
                break;
             default:
                 setTimeout(() => { AnimationEngine(intro_animation, "main-console"); }, 1000);

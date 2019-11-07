@@ -44,7 +44,7 @@ var intro_animation = new Array(
     [["show_assets"]]
     );
 
-var intro_animation_contact = new Array(
+var intro_animation_support = new Array(
     [["add_class","h-on-off-logo","turn-on-button-animation"]],
     [["wait", 100]],
     [["add_class","header-bg","fade-in-blink"], ["add_class","main-screen-bg","fade-in-blink"], ["add_class","footer-bg","fade-in-blink"]],
@@ -90,7 +90,7 @@ var intro_animation_contact = new Array(
     "support",
     [["wait", 1000]],
     [["delete_cursor"]],
-    [["show_contact"]]
+    [["show_support"]]
     );
 
 var restart_animation = new Array(
@@ -285,8 +285,8 @@ async function PlayCurrentFrame ()
                     ShowAssets();
                     break;
 
-                case "show_contact":
-                    ShowContact();
+                case "show_support":
+                    ShowSupport();
                     break;
 
                 case "reload":
@@ -369,10 +369,10 @@ async function ShowAssets()
     StartInteractiveConsole('home');
 }
 
-async function ShowContact()
+async function ShowSupport()
 {
     //document.querySelectorAll('.asset').forEach(function(asset){asset.remove()})
     //document.querySelectorAll('.console-permanent').forEach(function(asset){asset.remove()})
-    StartInteractiveConsole('contact');
+    StartInteractiveConsole('support');
 }
 
